@@ -1,5 +1,369 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
-.page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+.page { 
+  font-family: var(--font-family);
+  background: var(--bg-image) no-repeat center top;
+  background-color: var(--bg-main-color);
+  background-attachment: fixed;
+  }
+
+.decorated-zone{
+  height: 100vh;
+  min-height: 668px;
+}
+
+.decorated-zone::before{
+  content: "";
+  position: absolute;
+  border-bottom: 1px solid var(--button-color);
+  border-left: 1px solid var(--button-color);
+  width: 25px;
+  height: 25px;
+  left: 20px;
+  bottom: 20px;
+}
+
+.decorated-zone::after{
+  content: "";
+  position: absolute;
+  border-top: 1px solid var(--button-color);
+  border-right: 1px solid var(--button-color);
+  width: 25px;
+  height: 25px;
+  right: 20px;
+  top:20px;
+}
+
+@media(width < 600px){
+  .decorated-zone::before{
+    left: 10px;
+    bottom: 10px;
+  }
+  .decorated-zone::after{
+    right: 10px;
+    top:10px;
+  }
+}
+
+.header{
+  display: grid;
+}
+
+.header__rec{
+  position: absolute;
+  color: var(--rec-color);
+  text-transform: uppercase;
+  top: 21px;
+  right: 49px;
+}
+
+.header__rec::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  margin: -5px -20px 0 0;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px var(--rec-color);
+  background-color: var(--rec-color);
+  top: 50%;
+  right: 0;
+}
+
+.header__theme-menu{
+  padding-block-start: 20px;
+  padding-inline: 20px;
+}
+
+@media(width < 800px){
+  .header__theme-menu{
+    align-self: end;
+    margin-bottom: 24px;
+  }
+}
+
+@media(width < 500px){
+  .header__theme-menu{
+    padding-block-start: 10px;
+    padding-inline: 10px;
+  }
+}
+
+.header__theme-menu-list{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+@media(width < 800px){
+  .header__theme-menu-list{
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
+
+.header__theme-menu-button{
+  cursor: pointer;
+  font-size: 18px;
+  font-family: inherit;
+  line-height: 100%;
+  text-align: center;
+  background-color: transparent;
+  color: var(--button-color);
+  padding: 2.5px 12px;
+  border: none
+}
+
+.header__theme-menu-button:hover{
+  outline: 1px solid var(--hover-color);
+  border-color: transparent;
+}
+
+.header__theme-menu-button:focus-visible{
+  border-bottom: 1px solid var(--hover-color);
+}
+
+
+.header__theme-menu-button_active{
+  border: 1px solid var(--button-color);
+}
+
+.header-title{
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  color: var(--header-text-color);
+  text-shadow: 4px 4px 0 var(--text-shadow);
+  align-self:center;
+  padding-block-start: 35px;
+}
+
+@media(width < 800px){
+  .header-title{
+    margin-block-end: 35px;
+  }
+}
+
+
+@media(width < 600px){
+  .header-title{
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    line-height: 83%;
+    padding-inline-start: 10px;
+    padding-block-start: 0;
+    height: 53%;
+  }
+}
+
+.title-decor{
+  background-color: var(--bg-subtitle-color);
+  color: var(--subtitle-text-color);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 130%; 
+}
+
+.header-text{
+  width: 48%;
+  justify-self: end;
+  margin-inline-end: 20px;
+  margin-block-start: 12px ;
+}
+
+@media (width < 800px) {
+  .header-text{
+    width: 47.5%;
+    margin-bottom: 10px;
+  }
+}
+
+
+@media (width < 600px) {
+  .header-text{
+    margin: 0;
+    width: calc(100% - 20px);
+    justify-self: center;
+  }
+}
+
+.main{
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding-inline: 20px;
+  margin-block-start: 60px;
+}
+
+@media(width < 600px){
+  .main{
+    padding-inline: 10px;
+    margin-block-start: 40px;
+    gap: 50px;
+  }
+}
+
+.section-first{
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 32% auto;
+  gap: 20px;
+}
+
+.section-first__container{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media(width < 600px){
+  .section-first{
+    grid-auto-flow: row;
+    grid-template-columns:auto;
+  }
+}
+
+.section-second{
+  display: grid;
+  gap: 20px;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(3, minmax(31%, 1fr));
+  grid-template-rows: auto auto
+}
+
+.section-second .section-title{
+  grid-column: span 3;
+  width: 32%;
+}
+
+@media(width < 800px){
+  .section-second{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+  }
+}
+
+@media(width < 600px){
+  .section-second .section-title{
+      width: 100%;
+  }
+}
+
+
+.section-title{
+  color: var(--main-title-color);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 130%;
+}
+
+.section-subtitle{
+  margin-block-end: 10px;
+}
+
+.section-text{
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+  color: var(--main-text-color);
+}
+
+.link{
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--bg-subtitle-color);
+}
+
+.link:hover{
+  border-bottom: 1px solid var(--main-text-color);
+}
+
+.link:focus-visible{
+  outline: 1px solid var(--main-text-color);
+}
+
+.list-item{
+  font-weight: 400;
+}
+
+.section__list{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section-first .section__list{
+  margin-block-start: 20px;
+}
+
+.section{
+  margin-block-end: 60px;
+}
+
+@media (width<600px){
+  .section {
+    margin-block-end: 40px;
+  }
+  }
+
+@media (width>600px){
+.section .section-subtitle{
+  margin-block-end: 20px;
+  }
+}
+
+.section_picture{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.section__list-picture{
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(3, auto);
+  gap: 12px;
+}
+
+.picture-sunset{
+  grid-column: span 2;
+}
+
+.picture-ice-cream{
+  grid-row: span 2;
+}
+
+.picture-tape{
+  grid-row: span 2;
+}
+
+.picture-street{
+  grid-column: span 2;
+}
+
+@media(width < 600px){
+  .section__list-picture{
+    display: flex;
+    flex-direction: column;
+    gap:6px;
+  }
+}
+
+.footer{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-title{
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  color: var(--header-text-color);
+  text-shadow: 4px 4px 0 var(--text-shadow);
+  align-self:center;
+  padding-block-start: 35px;
+  text-shadow: 2px 2px 0 var(--text-shadow);
+  padding-block-end:40px ;
+}
+
+@media(width < 600px){
+  .footer-title{
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    line-height: 83%;
+  }
 }
