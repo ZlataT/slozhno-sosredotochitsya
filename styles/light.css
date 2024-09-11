@@ -5,7 +5,6 @@
 */
 
 .page.theme_light {
-  --font-family: "IBM Plex mono", sans-serif;
   --bg-main-color:  #fff1f7;
   --main-text-color: #353430;
   --subtitle-text-color:var(--main-text-color);
@@ -21,7 +20,6 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    --font-family: "IBM Plex mono", sans-serif;
     --bg-main-color:  #fff1f7;
     --main-text-color: #353430;
     --subtitle-text-color:var(--main-text-color);

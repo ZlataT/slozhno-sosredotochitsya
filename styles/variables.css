@@ -5,6 +5,9 @@
 
 :root{
   --font-family: "IBM Plex mono", sans-serif;
+}
+
+:root{
   --bg-main-color: #000028;
   --main-text-color: #f1b2ce;
   --subtitle-text-color:var(--bg-main-color);
