@@ -1,1 +1,1 @@
-https://github.com/ZlataT/slozhno-sosredotochitsya.git
+https://zlatat.github.io/slozhno-sosredotochitsya/
